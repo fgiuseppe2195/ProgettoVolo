@@ -1,0 +1,59 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+mat-form-field, input[type="time"] {
+  width: 100%;
+  margin-bottom: 10px; /* Riduzione dello spazio tra i campi */
+}
+
+button[type="submit"], .annulla-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.annulla-button {
+  background-color: #ae0707;
+  color: white;
+  font-size: 16px;
+}
+
+.annulla-button:hover {
+  background-color: #b40404;
+}
+
+.selected-airport {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.mat-form-field {
+  margin-bottom: 10px;
+}
+
+.wide-select .mat-select-panel {
+  max-width: 400px;
+}

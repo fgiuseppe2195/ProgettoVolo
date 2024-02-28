@@ -1,0 +1,66 @@
+<h2 mat-dialog-title>Lista Clienti</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="standard">
+    <mat-label>Filtra</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Inserisci il filtro" #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID_CLIENTE Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID CLIENTE</th>
+      <td mat-cell *matCellDef="let cliente">{{ cliente.id }}</td>
+    </ng-container>
+
+    <!-- NOME Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>NOME</th>
+      <td mat-cell *matCellDef="let cliente">{{ cliente.nome }}</td>
+    </ng-container>
+
+    <!-- COGNOME Column -->
+    <ng-container matColumnDef="cognome">
+      <th mat-header-cell *matHeaderCellDef>COGNOME</th>
+      <td mat-cell *matCellDef="let cliente">{{ cliente.cognome }}</td>
+    </ng-container>
+
+    <!-- ETA Column -->
+    <ng-container matColumnDef="eta">
+      <th mat-header-cell *matHeaderCellDef>ETA</th>
+      <td mat-cell *matCellDef="let cliente">{{ cliente.eta }}</td>
+    </ng-container>
+
+    <!-- INDIRIZZO Column -->
+    <ng-container matColumnDef="indirizzo">
+      <th mat-header-cell *matHeaderCellDef>INDIRIZZO</th>
+      <td mat-cell *matCellDef="let cliente">{{ cliente.indirizzo }}</td>
+    </ng-container>
+
+    <!-- NUMERO_TELEFONO Column -->
+    <ng-container matColumnDef="numeroTelefono">
+      <th mat-header-cell *matHeaderCellDef>NUMERO TELEFONO</th>
+      <td mat-cell *matCellDef="let cliente">{{ cliente.numeroTelefono }}</td>
+    </ng-container>
+
+    <!-- SELEZIONA Column -->
+    <ng-container matColumnDef="seleziona">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let cliente">
+        <button mat-icon-button (click)="selezionaCliente(cliente)">
+          <mat-icon>done</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header e Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Paginator -->
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCloseClick()">Chiudi</button>
+</div>

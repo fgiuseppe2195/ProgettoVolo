@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Inserimento Prenotazione</h2>
+  
+
+  <mat-form-field class="full-width" *ngIf="!nuovaPrenotazione.cliente">
+    <mat-label>Seleziona Cliente</mat-label>
+    <input matInput placeholder="Seleziona Cliente" [(ngModel)]="nuovaPrenotazione.codiceCliente" name="cliente" required readonly>
+    <button mat-icon-button (click)="openClientiDialog()">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <span *ngIf="nuovaPrenotazione.cliente">{{ nuovaPrenotazione.cliente.nome }}</span>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Numero Volo" [(ngModel)]="nuovaPrenotazione.numeroVolo" name="numeroVolo" required>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput type="date" placeholder="Data Prenotazione" [(ngModel)]="nuovaPrenotazione.dataPrenotazione" name="dataPrenotazione" required>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput type="date" placeholder="Data Viaggio" [(ngModel)]="nuovaPrenotazione.dataViaggio" name="dataViaggio" required>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Costo Fatturato" [(ngModel)]="nuovaPrenotazione.costoFatturato" name="costoFatturato" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="warn" (click)="annullaSelezioneCliente()" *ngIf="nuovaPrenotazione.cliente">Annulla Selezione Cliente</button>
+
+  <button mat-raised-button color="primary" type="submit" (click)="createPrenotazione()">Inserisci Prenotazione</button>
+</div>

@@ -1,0 +1,38 @@
+Avvio di "GIUSEPPE21"."EXP_SD_1280-16_07_07":  
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+.  "GIUSEPPE21"."UTENTI"                       7.763 KB stimato
+.  "GIUSEPPE21"."DETTAGLIO_CLIENTE"            7.292 KB stimato
+.  "GIUSEPPE21"."DETTAGLIO_PRENOTAZIONE"       7.097 KB stimato
+.  "GIUSEPPE21"."DETTAGLI_AEREO"               6.589 KB stimato
+.  "GIUSEPPE21"."DETTAGLI_COMPAGNIA_AEREA"     6.089 KB stimato
+.  "GIUSEPPE21"."DETTAGLIO_AEROPORTO"          4.683 KB stimato
+.  "GIUSEPPE21"."DETTAGLI_VOLO"                4.683 KB stimato
+.  "GIUSEPPE21"."STATISTICHE"                  4.683 KB stimato
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Elaborazione dell'object type SCHEMA_EXPORT/STATISTICS/MARKER
+Elaborazione dell'object type SCHEMA_EXPORT/USER
+Elaborazione dell'object type SCHEMA_EXPORT/SYSTEM_GRANT
+Elaborazione dell'object type SCHEMA_EXPORT/ROLE_GRANT
+Elaborazione dell'object type SCHEMA_EXPORT/DEFAULT_ROLE
+Elaborazione dell'object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Elaborazione dell'object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/TABLE
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/COMMENT
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/IDENTITY_COLUMN
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Elaborazione dell'object type SCHEMA_EXPORT/TABLE/TRIGGER
+. . esportate "GIUSEPPE21"."UTENTI"                       5.468 KB      17 righe
+. . esportate "GIUSEPPE21"."DETTAGLIO_CLIENTE"            5.515 KB       8 righe
+. . esportate "GIUSEPPE21"."DETTAGLIO_PRENOTAZIONE"       5.343 KB       8 righe
+. . esportate "GIUSEPPE21"."DETTAGLI_AEREO"               5.140 KB       1 righe
+. . esportate "GIUSEPPE21"."DETTAGLI_COMPAGNIA_AEREA"     5.203 KB      14 righe
+. . esportate "GIUSEPPE21"."DETTAGLIO_AEROPORTO"          5.179 KB       2 righe
+. . esportate "GIUSEPPE21"."DETTAGLI_VOLO"                    0 KB       0 righe
+. . esportate "GIUSEPPE21"."STATISTICHE"                      0 KB       0 righe
+Caricamento/Scaricamento della tabella principale "GIUSEPPE21"."EXP_SD_1280-16_07_07" completato
+******************************************************************************
+File di dump impostato per GIUSEPPE21.EXP_SD_1280-16_07_07 is:
+  C:\ORACLE19C\ADMIN\ORCL\DPDUMP\EXPDAT01-16_08_47.DMP
+Job "GIUSEPPE21"."EXP_SD_1280-16_07_07" completato in Lun Feb 26 16:09:17 2024 elapsed 0 00:00:30

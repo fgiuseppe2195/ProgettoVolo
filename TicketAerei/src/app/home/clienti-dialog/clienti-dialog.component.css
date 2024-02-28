@@ -1,0 +1,11 @@
+.mat-form-field {
+  margin-bottom: 20px; /* Aggiungi spazio tra il campo di filtro e la tabella */
+}
+
+.mat-table {
+  width: 100%; /* Rendi la tabella larga quanto il contenitore */
+}
+
+.mat-row:hover {
+  background-color: #f5f5f5; /* Cambia colore di sfondo al passaggio del mouse */
+}

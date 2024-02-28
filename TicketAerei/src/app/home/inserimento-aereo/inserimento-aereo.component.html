@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Inserimento Nuovo Aereo</h2>
+    <form>
+        <ng-container *ngIf="!compagniaInserita; else compagniaInseritaTemplate">
+            <mat-form-field class="full-width">
+                <mat-label>Compagnia Aerea</mat-label>
+                <input matInput [(ngModel)]="nuovoAereo.nomeCompagnia" name="nomeCompagnia" disabled>
+                <button mat-icon-button (click)="apriDialogoInserimentoCompagnia()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </mat-form-field>
+        </ng-container>
+        <ng-template #compagniaInseritaTemplate>
+            <mat-form-field class="full-width">
+                <mat-label>Compagnia Aerea</mat-label>
+                <input matInput [(ngModel)]="nuovoAereo.nomeCompagnia" name="nomeCompagnia" disabled>
+            </mat-form-field>
+        </ng-template>
+  
+        <mat-form-field class="full-width">
+            <mat-label>Modello</mat-label>
+            <input matInput [(ngModel)]="nuovoAereo.modello" name="modello" required>
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+            <mat-label>Stato</mat-label>
+            <mat-select [(ngModel)]="nuovoAereo.stato" name="stato" required>
+                <mat-option *ngFor="let stato of stati" [value]="stato">{{ stato }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+            <mat-label>Note</mat-label>
+            <textarea matInput [(ngModel)]="nuovoAereo.note" name="note"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="inserisciAereo()">Inserisci Aereo</button>
+    </form>
+</div>

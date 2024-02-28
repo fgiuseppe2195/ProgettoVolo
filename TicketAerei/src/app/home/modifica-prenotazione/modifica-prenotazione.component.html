@@ -1,0 +1,22 @@
+<div *ngIf="prenotazione"class="modifica-prenotazione-container">
+  <h2>Modifica Prenotazione</h2>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Codice Cliente</mat-label>
+      <input matInput type="number" id="codiceCliente" [(ngModel)]="prenotazione.codiceCliente" name="codiceCliente">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Numero Volo</mat-label>
+      <input matInput type="number" id="numeroVolo" [(ngModel)]="prenotazione.numeroVolo" name="numeroVolo">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Data Viaggio</mat-label>
+      <input matInput type="date" id="dataViaggio" [(ngModel)]="prenotazione.dataViaggio" name="dataViaggio">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Costo Fatturato</mat-label>
+      <input matInput type="number" id="costoFatturato" [(ngModel)]="prenotazione.costoFatturato" name="costoFatturato">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="modificaPrenotazione()">Salva Modifiche</button>
+  </form>
+</div>

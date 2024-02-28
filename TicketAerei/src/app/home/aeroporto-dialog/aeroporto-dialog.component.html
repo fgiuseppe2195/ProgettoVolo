@@ -1,0 +1,70 @@
+<div class="container">
+  <h2>Seleziona o Inserisci Aeroporto</h2>
+
+  <form>
+    <mat-form-field class="full-width">
+      <mat-label>Nome Aeroporto</mat-label>
+      <input matInput [(ngModel)]="nuovoAeroporto.nomeAeroporto" name="nomeAeroporto" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Città</mat-label>
+      <input matInput [(ngModel)]="nuovoAeroporto.citta" name="citta" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Nazione</mat-label>
+      <input matInput [(ngModel)]="nuovoAeroporto.nazione" name="nazione" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Numero Piste</mat-label>
+      <input matInput type="number" [(ngModel)]="nuovoAeroporto.numeroPiste" name="numeroPiste" required>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="inserisciAeroporto()">Inserisci</button>
+      <button mat-raised-button (click)="onClose()">Annulla</button>
+    </div>
+  </form>
+
+  <hr>
+  <h2>Aeroporti Esistenti</h2>
+  <mat-form-field class="filter-input">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtra per nome, città o nazione">
+  </mat-form-field>
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="nomeAeroporto">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nome Aeroporto</mat-header-cell>
+      <mat-cell *matCellDef="let aeroporto">{{ aeroporto.nomeAeroporto }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="citta">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Città</mat-header-cell>
+      <mat-cell *matCellDef="let aeroporto">{{ aeroporto.citta }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nazione">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nazione</mat-header-cell>
+      <mat-cell *matCellDef="let aeroporto">{{ aeroporto.nazione }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="azioni">
+      <mat-header-cell *matHeaderCellDef>Azioni</mat-header-cell>
+      <mat-cell *matCellDef="let aeroporto">
+        <button mat-icon-button color="primary" (click)="selezionaAeroporto(aeroporto)">
+          <mat-icon>done</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="eliminaAeroporto(aeroporto)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+</div>

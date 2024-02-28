@@ -1,0 +1,29 @@
+<form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="utente.firstname" name="nome" required>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Cognome</mat-label>
+      <input matInput type="text" [(ngModel)]="utente.lastname" name="cognome" required>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" [(ngModel)]="utente.username" name="username" required>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="utente.email" name="email" required>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="utente.password" name="password" required>
+    </mat-form-field>
+  
+    <button mat-raised-button type="submit">Salva Utente</button>
+  </form>
+  

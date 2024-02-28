@@ -1,0 +1,27 @@
+.example-form {
+  max-width: 600px; /* Larghezza massima del form */
+  margin: auto; /* Centra il form orizzontalmente */
+  padding: 20px; /* Aggiunge spazio intorno al form */
+  border-radius: 10px; /* Angoli arrotondati */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombra per effetto di profondità */
+  background-color: #ffffff; /* Colore di sfondo bianco */
+}
+
+.example-form h2 {
+  margin-top: 0; /* Rimuove il margine superiore dall'intestazione */
+}
+
+.example-full-width {
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  margin-bottom: 20px; /* Aggiunge spazio tra i campi del form */
+}
+
+.mat-form-field {
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+}
+.modifica-prenotazione-container {
+  background-color: #cceeff; /* Celeste */
+  padding: 20px; /* Aggiunge spazio intorno al contenuto */
+  border-radius: 10px; /* Angoli arrotondati */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombra per effetto di profondità */
+}

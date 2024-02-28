@@ -1,0 +1,27 @@
+.custom-toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .toolbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fill-remaining-space {
+    flex: 1;
+  }
+  
+  .welcome-message-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .welcome-message {
+    margin-right: 10px; 
+  }
+  
+  
+  button.mat-icon-button {
+    min-width: 36px; }
+  

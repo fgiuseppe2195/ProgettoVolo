@@ -1,0 +1,32 @@
+.container {
+    max-width: 600px; /* Larghezza massima del contenitore */
+    margin: auto; /* Centra il contenitore orizzontalmente */
+    padding: 20px; /* Aggiunge spazio intorno al contenitore */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombra per effetto di profondità */
+    background-color: #ffffff; /* Colore di sfondo bianco */
+  }
+  
+  .container h2 {
+    margin-top: 0; /* Rimuove il margine superiore dall'intestazione */
+  }
+  
+  .full-width {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    margin-bottom: 20px; /* Aggiunge spazio tra i campi del form */
+  }
+  
+  .mat-form-field {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+  }
+  
+  button[type="submit"] {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+  }
+  .mat-form-field-disabled .mat-form-field-label {
+    color: black;
+}
+
+.mat-form-field-disabled .mat-form-field-underline {
+    background-color: transparent; /* Optional: remove underline */
+}

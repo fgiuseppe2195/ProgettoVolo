@@ -1,0 +1,80 @@
+.form.signup {
+    background-color: #d7e7f1;
+    padding: 30px;
+    border-radius: 5px;
+    transform-origin: top;
+    transition: all .3s ease-out;
+    opacity: 0;
+  }
+  
+  .form.signup.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .form.signup label {
+    font-size: 14px;
+    color: #a1b4b4;
+  }
+  
+  .form.signup input {
+    display: block;
+    width: calc(100% - 16px);
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3b4465;
+    background: #eef9fe;
+    border: 1px solid #cddbef;
+    border-radius: 2px;
+  }
+  
+  .form.signup button[type='submit'] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fbfdff;
+    background-color: #a7e245;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form.signup button[type='submit']:hover {
+    background-color: #8bcd34;
+  }
+  
+  .form.signup p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #a1b4b4;
+  }
+  
+  .form.signup a {
+    color: #3b4465;
+  }
+  
+  .form.signup {
+    max-width: 300px; 
+    margin: 0 auto; 
+  }
+  
+  
+  .form.signup {
+    background-color: #d7e7f1;
+    padding: 30px;
+    border-radius: 5px;
+    transform-origin: top;
+    transition: all .3s ease-out;
+    opacity: 0;
+  }
+  
+  .form.signup.active {
+    opacity: 1;
+    transform: translateY(0);
+  }

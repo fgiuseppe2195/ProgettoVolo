@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="forms">
+      <div class="form signup" [ngClass]="{ 'active': activeForm === 'signup' }">
+        <span class="title">Registrazione</span>
+        <form (ngSubmit)="register()">
+          <div class="input-field">
+            <label for="firstName">Nome:</label>
+            <input type="text" id="firstName" [(ngModel)]="utente.firstName" name="firstName" required>
+          </div>
+  
+          <div class="input-field">
+            <label for="lastName">Cognome:</label>
+            <input type="text" id="lastName" [(ngModel)]="utente.lastName" name="lastName" required>
+          </div>
+  
+          <div class="input-field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="utente.email" name="email" required>
+          </div>
+  
+          <div class="input-field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" [(ngModel)]="utente.username" name="username" required>
+          </div>
+  
+          <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" [(ngModel)]="utente.password" name="password" required>
+          </div>
+  
+          <button type="submit">Registra Utente</button>
+        </form>
+        
+        
+        <div *ngIf="registrationSuccess" class="success-message">
+          Registrazione completata con successo!
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

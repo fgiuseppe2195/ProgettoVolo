@@ -1,0 +1,105 @@
+oracle
+CREATE TABLE Dettaglio_compagnia_aerea (
+    Nome_Compagnia VARCHAR2(50) PRIMARY KEY,
+    Sede VARCHAR2(50)
+);
+
+CREATE TABLE Dettaglio_aereoporto (
+    Nome VARCHAR2(50) PRIMARY KEY,
+    Città VARCHAR2(50),
+    Nazione VARCHAR2(50),
+    Numero_Piste NUMBER
+);
+
+CREATE TABLE Dettagli_volo (
+    Codice_Volo NUMBER PRIMARY KEY,
+    Terminal_Origine VARCHAR2(50),
+    Terminal_Destinazione VARCHAR2(50),
+    Scali_Intermedi VARCHAR2(255),
+    Posti_Prenotati NUMBER,
+    Posti_Disponibili NUMBER,
+    Costo_Base NUMBER,
+    Tipo_Volo VARCHAR2(20),
+    Dettagli_Trasporto VARCHAR2(255),
+    FOREIGN KEY (Terminal_Origine) REFERENCES Dettaglio_aereoporto(Nome),
+    FOREIGN KEY (Terminal_Destinazione) REFERENCES Dettaglio_aereoporto(Nome)
+);
+
+CREATE TABLE Dettaglio_aereo (
+    Codice_Aereo VARCHAR2(20) PRIMARY KEY,
+    Codice_Compagnia VARCHAR2(50),
+    Modello VARCHAR2(50),
+    Stato VARCHAR2(20),
+    Note VARCHAR2(255),
+    FOREIGN KEY (Codice_Compagnia) REFERENCES Dettaglio_compagnia_aerea(Nome_Compagnia)
+);
+
+CREATE TABLE Dettaglio_cliente (
+    Codice_Cliente NUMBER PRIMARY KEY,
+    Nome VARCHAR2(50),
+	Cognome VARCHAR2(50),
+    Indirizzo VARCHAR2(255),
+    Numero_Telefono VARCHAR2(15),
+    Eta NUMBER
+);
+
+CREATE TABLE Dettaglio_prenotazione (
+    Codice_Cliente NUMBER,
+    Codice_Volo NUMBER,
+    Data_Prenotazione DATE,
+    Data_Viaggio DATE,
+    Costo_Fatturato NUMBER,
+    PRIMARY KEY (Codice_Cliente, Codice_Volo),
+    FOREIGN KEY (Codice_Cliente) REFERENCES Dettaglio_cliente(Codice_Cliente),
+    FOREIGN KEY (Codice_Volo) REFERENCES Dettagli_volo(Codice_Volo)
+);
+
+	CREATE TABLE Statistiche (
+		Id_Volo NUMBER PRIMARY KEY,
+		Numero_Prenotazioni NUMBER,
+		Eta_Media_Passeggeri NUMBER,
+		Numero_Adulti NUMBER,
+		Numero_Bambini NUMBER,
+		Totale_Euro_Fatturato NUMBER,
+		FOREIGN KEY (Id_Volo) REFERENCES Dettagli_volo(Codice_Volo)
+	);
+
+	CREATE OR REPLACE TRIGGER trg_volo_inaugurale
+AFTER INSERT ON DETTAGLI_VOLO
+FOR EACH ROW
+DECLARE
+    v_primo_volo NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_primo_volo
+    FROM DETTAGLI_VOLO
+    WHERE ID_AEREO = :NEW.ID_AEREO;
+
+    IF v_primo_volo = 1 THEN
+        UPDATE DETTAGLI_AEREO
+        SET NOTE = 'Volo inaugurale in data ' || TO_CHAR(SYSDATE, 'DD-MON-YYYY')
+        WHERE ID_AEREO = :NEW.ID_AEREO;
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER trg_aggiorna_statistiche
+AFTER INSERT ON DETTAGLIO_PRENOTAZIONE
+FOR EACH ROW
+BEGIN
+    UPDATE STATISTICHE
+    SET NUMERO_PRENOTAZIONI = NUMERO_PRENOTAZIONI + 1,
+        TOTALE_EURO_FATTURATO = TOTALE_EURO_FATTURATO + :NEW.COSTO_FATTURATO
+    WHERE ID_VOLO = :NEW.NUMERO_VOLO;
+END;
+
+
+CREATE OR REPLACE TRIGGER trg_aereo
+AFTER UPDATE OF STATO ON DETTAGLI_AEREO
+FOR EACH ROW
+BEGIN
+    IF :OLD.STATO = 'funzionante' AND :NEW.STATO = 'non funzionante' THEN
+        UPDATE DETTAGLI_VOLO
+        SET TERMINAL_ORIGINE = :NEW.ID_AEREO
+        WHERE ID_AEREO = :OLD.ID_AEREO;
+    END IF;
+END;

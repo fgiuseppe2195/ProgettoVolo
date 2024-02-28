@@ -1,0 +1,67 @@
+<div class="container">
+  <h2>Inserimento Nuovo Volo</h2>
+  <form (ngSubmit)="inserisciVolo()">
+
+    <mat-form-field class="full-width">
+      <mat-label>Terminal di Origine</mat-label>
+      <input matInput [(ngModel)]="nuovoVolo.terminalOrigine" name="terminalOrigine" required readonly (click)="apriDialogAeroporti('terminalOrigine')">
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+      <mat-label>Terminal di Destinazione</mat-label>
+      <input matInput [(ngModel)]="nuovoVolo.terminalDestinazione" name="terminalDestinazione" required readonly (click)="apriDialogAeroporti('terminalDestinazione')">
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+      <mat-label>Scala Intermedia</mat-label>
+      <input matInput [(ngModel)]="nuovoVolo.scaliIntermedi" name="scaliIntermedi" (click)="apriDialogAeroporti('scaliIntermedi')">
+    </mat-form-field>
+    
+    
+    <mat-form-field class="full-width">
+      <mat-label>Posti Prenotati</mat-label>
+      <input matInput type="number" [(ngModel)]="nuovoVolo.postiPrenotati" name="postiPrenotati" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Posti Disponibili</mat-label>
+      <input matInput type="number" [(ngModel)]="nuovoVolo.postiDisponibili" name="postiDisponibili" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Costo Base</mat-label>
+      <input matInput type="number" [(ngModel)]="nuovoVolo.costoBase" name="costoBase" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Tipo Volo</mat-label>
+      <mat-select [(ngModel)]="nuovoVolo.tipoVolo" name="tipoVolo" required>
+        <mat-option *ngFor="let tipo of tipiVolo" [value]="tipo">{{ tipo }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Codice Volo</mat-label>
+      <input matInput [(ngModel)]="nuovoVolo.codiceVolo" name="codiceVolo" required>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+      <mat-label>Dettagli Trasporto</mat-label>
+      <mat-select [(ngModel)]="nuovoVolo.dettagliTrasporto" name="dettagliTrasporto" required>
+        <mat-option *ngFor="let dettaglio of dettagliTrasporto" [value]="dettaglio">{{ dettaglio }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+      <mat-label>Ora Partenza</mat-label>
+      <input matInput type="time" [(ngModel)]="nuovoVolo.oraPartenza" name="oraPartenza" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Ora Arrivo</mat-label>
+      <input matInput type="time" [(ngModel)]="nuovoVolo.oraArrivo" name="oraArrivo" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!isValidInput()">Inserisci Volo</button>
+  </form>
+</div>

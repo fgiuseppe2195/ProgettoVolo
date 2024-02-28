@@ -1,0 +1,63 @@
+<mat-toolbar class="custom-toolbar" color="primary">
+  <div class="toolbar-links">
+    <button mat-button [matMenuTriggerFor]="menuDropdown">
+      <mat-icon>menu</mat-icon> Menu
+    </button>
+
+    <mat-menu #menuDropdown="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="clienteMenu">
+        <mat-icon>account_circle</mat-icon> Cliente
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="prenotazioneMenu">
+        <mat-icon>assignment</mat-icon> Prenotazione
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="aereoMenu">
+        <mat-icon>flight</mat-icon> Aereo
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="voloMenu">
+        <mat-icon>flight_land</mat-icon> Volo
+      </button>
+      
+    </mat-menu>
+
+    <mat-menu #clienteMenu="matMenu">
+      <a mat-menu-item routerLink="/inserimento-cliente">
+        <mat-icon>person_add</mat-icon> Inserisci Cliente
+      </a>
+    </mat-menu>
+
+    <mat-menu #prenotazioneMenu="matMenu">
+      <a mat-menu-item routerLink="/dettaglio-prenotazione/:id">
+        <mat-icon>info</mat-icon> Dettaglio Prenotazione
+      </a>
+      <a mat-menu-item routerLink="/inserimento-prenotazione">
+        <mat-icon>add_box</mat-icon> Inserisci Prenotazione
+      </a>
+    </mat-menu>
+
+    <mat-menu #aereoMenu="matMenu">
+      <a mat-menu-item routerLink="/inserimento-aereo">
+        <mat-icon>flight_takeoff</mat-icon>Inserisci Aereo
+      </a>
+    </mat-menu>
+
+    <mat-menu #voloMenu="matMenu">
+      <a mat-menu-item routerLink="/inserimento-volo">
+        <mat-icon>flight</mat-icon> Inserisci Volo
+      </a>
+    </mat-menu>
+
+   
+  </div>
+
+  <span class="fill-remaining-space"></span>
+
+  <div class="welcome-message-wrapper">
+    <span class="welcome-message">
+      Benvenuto, {{ getNomeUtente() }}!
+    </span>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

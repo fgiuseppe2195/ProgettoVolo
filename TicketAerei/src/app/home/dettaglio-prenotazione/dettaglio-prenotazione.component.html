@@ -1,0 +1,42 @@
+<div class="input-wrapper">
+  <mat-form-field appearance="fill">
+    <mat-label>Inserisci l'ID della prenotazione:</mat-label>
+    <input matInput type="text" id="prenotazioneId" [(ngModel)]="idPrenotazione">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="cercaPrenotazione()">Cerca</button>
+</div>
+  
+<div class="details-container" *ngIf="prenotazione">
+  <h2 class="details-title">Dettagli Prenotazione</h2>
+  <div class="details-content">
+    <table class="details-table">
+      <tr>
+        <td><strong>ID Prenotazione:</strong></td>
+        <td>{{ prenotazione?.idPrenotazione }}</td>
+      </tr>
+      <tr>
+        <td><strong>Codice Cliente:</strong></td>
+        <td>{{ prenotazione?.codiceCliente }}</td>
+      </tr>
+      <tr>
+        <td><strong>Numero Volo:</strong></td>
+        <td>{{ prenotazione?.numeroVolo }}</td>
+      </tr>
+      <tr>
+        <td><strong>Data Prenotazione:</strong></td>
+        <td>{{ prenotazione?.dataPrenotazione | date }}</td>
+      </tr>
+      <tr>
+        <td><strong>Data Viaggio:</strong></td>
+        <td>{{ prenotazione?.dataViaggio | date }}</td>
+      </tr>
+      <tr>
+        <td><strong>Costo Fatturato:</strong></td>
+        <td>{{ prenotazione?.costoFatturato }}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="modificaPrenotazione(prenotazione?.idPrenotazione)">Modifica Prenotazione</button>
+  </div>
+</div>

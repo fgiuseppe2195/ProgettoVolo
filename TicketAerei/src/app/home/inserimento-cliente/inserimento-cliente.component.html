@@ -1,0 +1,48 @@
+<div class="inserimento-cliente-container">
+    <mat-toolbar>
+      <span>INSERIMENTO Cliente</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+  
+
+
+
+  <form (ngSubmit)="inserisciCliente()" #clienteForm="ngForm">
+    <div class="form-group">
+      <label for="nome">Nome </label>
+      <mat-form-field>
+        <input matInput id="nome" type="text" name="nome" [(ngModel)]="nuovoCliente.nome" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label for="cognome">Cognome </label>
+      <mat-form-field>
+        <input matInput id="cognome" type="text" name="cognome" [(ngModel)]="nuovoCliente.cognome" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label for="indirizzo">Indirizzo:</label>
+      <mat-form-field>
+        <input matInput id="indirizzo" type="text" name="indirizzo" [(ngModel)]="nuovoCliente.indirizzo" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroTelefono">Numero Telefono:</label>
+      <mat-form-field>
+        <input matInput id="numeroTelefono" type="text" name="numeroTelefono" [(ngModel)]="nuovoCliente.numeroTelefono" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label for="eta">Età:</label>
+      <mat-form-field>
+        <input matInput id="eta" type="number" name="eta" [(ngModel)]="nuovoCliente.eta" required>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button type="submit" [disabled]="clienteForm.invalid">Inserisci Cliente</button>
+  </form>
+</div>

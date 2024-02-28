@@ -1,0 +1,42 @@
+.container {
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.mat-cell, .mat-header-cell {
+  text-align: left;
+  padding: 8px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mat-dialog-content {
+  margin-top: 20px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.mat-icon {
+  margin-left: 5px;
+  color: green; /* Colore dell'icona */
+}
